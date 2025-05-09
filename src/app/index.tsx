@@ -1,4 +1,5 @@
 import {Image} from 'expo-image';
+import { Link } from 'expo-router';
 import { View, Text, StyleSheet, TextInput, TouchableOpacity } from 'react-native';
 export default function  Index(){
 
@@ -6,29 +7,59 @@ export default function  Index(){
     return(
         <View style={styles.container}>
             <Image source={logo} style={{width: 150, height: 150}}/>
-            <Text style={styles.titulo}>Olá MUndo</Text>
+            <Text style={styles.titulo}>Faça seu cadastro</Text>
             <TextInput style={styles.TextInput} placeholder='nome'/>
-            <TextInput style={styles.TextInput} placeholder='nome'/>
-            <TextInput style={styles.TextInput} placeholder='nome'/>
+            <TextInput style={styles.TextInput} placeholder='e-mail'/>
+            <TextInput style={styles.TextInput} placeholder='Password'/>
+            <Link href="/dashboard">
             <TouchableOpacity style={styles.buttons}>
                 <Text style={styles.buttonsText}>Entrar</Text>
             </TouchableOpacity>
+            </Link>
+            <Link href="../cadastro">
+            <TouchableOpacity style={styles.buttons}>
+                <Text style={styles.buttonsText}>Cadastrar</Text>
+            </TouchableOpacity>
+            </Link>
         </View>
     )
 }
 
 const styles = StyleSheet.create({
  container:{
-
+    flex: 1,
+    gap: 15,
+    alignItems: "center",
+    paddingTop: 100,
+    backgroundColor: "black",
+    padding: 20,
  },
 
  titulo:{
-
+    fontSize: 35,
+    fontWeight: 600,
+    marginBottom: 30,
+    color: "white",
  },
 
  TextInput:{
-
+    color: "#fff",
+    fontWeight: 600,
+    letterSpacing: 1.5,
+    borderRadius: 7,
+    padding: 10,
+    backgroundColor: "#141f25",
+    width: "100%",
  },
- buttons:{},
- buttonsText:{},
+ buttons:{
+    backgroundColor:"green",
+    borderRadius: 12,
+    paddingVertical: 2,
+ },
+ buttonsText:{
+    color:"#fff",
+    paddingVertical:2,
+    paddingHorizontal:20,
+    fontSize:22
+ },
 })
