@@ -1,7 +1,7 @@
 import { Link } from 'expo-router';
 import { View, Text, StyleSheet, TextInput, TouchableOpacity } from 'react-native';
 export default function  Cadastro(){
-
+//Tela de Cadastro
    
     return(
         <View style={styles.container}>

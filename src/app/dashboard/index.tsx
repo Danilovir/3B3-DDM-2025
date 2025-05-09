@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
-import { View, Text, Button, Platform } from 'react-native';
+import { View, Text, Button, Platform, TouchableOpacity } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
 import DateTimePicker from '@react-native-community/datetimepicker';
 import { Calendar } from 'react-native-calendars';
-
+import { useRouter } from 'expo-router';
+import Index from '..';
+import { Link } from 'expo-router';
+//Tela agendamentos
 
 
 const especialidades = {
@@ -19,6 +22,7 @@ export default function Dashboard() {
   const [medico, setMedico] = useState('');
   const [data, setData] = useState(new Date());
   const [showCalendario, setShowCalendario] = useState(false);
+  const router = useRouter();
 
   const handleDateChange = (event, selectedDate) => {
     const currentDate = selectedDate || data;
@@ -32,6 +36,12 @@ export default function Dashboard() {
   return (
     <View style={{ padding: 20 }}>
       <Text style={{ fontSize: 24, fontWeight: 'bold', marginBottom: 20 }}>Agendamentos</Text>
+
+      <Link href="..">
+            <TouchableOpacity>
+                <Text>Voltar</Text>
+            </TouchableOpacity>
+            </Link>
 
       <Text style={{ marginBottom: 5 }}>Tipo de Consulta:</Text>
       <Picker
