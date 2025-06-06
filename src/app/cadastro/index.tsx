@@ -6,10 +6,10 @@ export default function  Cadastro(){
     return(
         <View style={styles.container}>
           
-            <Text style={styles.titulo}>Faça seu Cadastro</Text>
+            <Text style={styles.titulo}>Cadstre-se</Text>
             <TextInput style={styles.TextInput} placeholder='nome'/>       
-            <TextInput style={styles.TextInput} placeholder='e-mail'/>
-            <TextInput style={styles.TextInput} placeholder='Password'/>
+            <TextInput style={styles.TextInput} placeholder='E-mail'/>
+            <TextInput style={styles.TextInput} placeholder='Senha'/>
             <View style={styles.btConteiner}>
            <Link href="..">
             <TouchableOpacity style={styles.buttons}>
@@ -33,41 +33,41 @@ const styles = StyleSheet.create({
     flex: 1,
     gap: 15,
     alignItems: "center",
-    paddingTop: 100,
     backgroundColor: "black",
     padding: 20,
  },
 
  titulo:{
+   color:"white",
     fontSize: 35,
-    fontWeight: 600,
+    fontWeight: 'bold',
+    marginTop: 140,
     marginBottom: 30,
-    color: "white",
+    
  },
 
  TextInput:{
-    color: "#fff",
-    fontWeight: 600,
-    letterSpacing: 1.5,
+    color: "#white",   
     borderRadius: 7,
     padding: 10,
-    backgroundColor: "#141f25",
-    width: "100%",
+    backgroundColor: "#1d1d1d",
+    width: "80%",
  },
  btConteiner:{
-    gap: 10,
+    gap: 20,
     width: "80%",
+    justifyContent:'center',
     flexDirection: "row",
  },
  buttons:{
     backgroundColor:"green",
     padding: 10,
-    flex:1,
+    width: 120,
     borderRadius: 10,
     
  },
  buttonsText:{
-    color:"#fff",
+    color:"white",
     fontWeight: "bold",
     fontSize:16,
     textAlign: "center",
