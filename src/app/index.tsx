@@ -23,6 +23,7 @@ const [senha, setSenha] = useState ("")
 
             <TextInput style={styles.textInput} placeholder='Password'
             value={senha} onChangeText={setSenha}
+            secureTextEntry
             />
             <Text style={styles.textSaida}>{senha}</Text>
 

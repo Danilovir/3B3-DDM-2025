@@ -1,15 +1,40 @@
 import { Link } from 'expo-router';
+import { useState } from 'react';
 import { View, Text, StyleSheet, TextInput, TouchableOpacity } from 'react-native';
 export default function  Cadastro(){
 //Tela de Cadastro
-   
+   const [nome, setNome] = useState('')
+   const [email, setEmail] = useState('')
+   const [ senha, setSenha] = useState('')
+   const [confirmarSenha, setConfirmeSenha] = useState('')
     return(
         <View style={styles.container}>
           
-            <Text style={styles.titulo}>Cadstre-se</Text>
-            <TextInput style={styles.TextInput} placeholder='nome'/>       
-            <TextInput style={styles.TextInput} placeholder='E-mail'/>
-            <TextInput style={styles.TextInput} placeholder='Senha'/>
+            <Text style={styles.titulo}>Cadastre-se</Text>
+
+            <TextInput style={styles.TextInput} placeholder='nome'
+            value={nome} onChangeText={setNome}
+            /> 
+            <Text style={styles.TextSaidacadastro}> {nome}</Text>      
+          
+            <TextInput style={styles.TextInput} placeholder='E-mail'
+            value={email} onChangeText={setEmail}
+            />
+              <Text style={styles.TextSaidacadastro}> {email}</Text>  
+            
+            <TextInput style={styles.TextInput} placeholder='Senha 123'
+            secureTextEntry
+            value={senha} onChangeText={setSenha}
+            />
+
+            <Text style={styles.TextSaidacadastro}> {senha}</Text>  
+            
+            <TextInput style={styles.TextInput} placeholder='Confirme senha'
+            secureTextEntry
+            value={confirmarSenha} onChangeText={setConfirmeSenha}
+            />
+              <Text style={styles.TextSaidacadastro}> {confirmarSenha}</Text>  
+
             <View style={styles.btConteiner}>
            <Link href="..">
             <TouchableOpacity style={styles.buttons}>
@@ -47,11 +72,18 @@ const styles = StyleSheet.create({
  },
 
  TextInput:{
-    color: "#white",   
+    color: "white",   
     borderRadius: 7,
     padding: 10,
     backgroundColor: "#1d1d1d",
     width: "80%",
+ },
+ TextSaidacadastro:{
+   marginTop:-10,
+   color:'red',
+   fontSize:12,
+   alignSelf:'flex-start',
+   marginLeft: 100,
  },
  btConteiner:{
     gap: 20,
@@ -75,3 +107,4 @@ const styles = StyleSheet.create({
  },
  
 })
+
